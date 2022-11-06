@@ -24,13 +24,38 @@ body {
   font-size: 16px;
   width: 100%;
   border-radius: 8px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .picker_wrapper .date_picker_wrapper input:focus, .picker_wrapper .date_picker_wrapper input:focus-visible, .picker_wrapper .date_picker_wrapper input:focus-within {
   border-color: #1E86CB !important;
   outline: none;
 }
-.picker_wrapper .date_picker_wrapper input:focus ~ .label_text, .picker_wrapper .date_picker_wrapper input:focus-visible ~ .label_text, .picker_wrapper .date_picker_wrapper input:focus-within ~ .label_text {
+.picker_wrapper .date_picker_wrapper input:focus + .label_text, .picker_wrapper .date_picker_wrapper input:focus-visible + .label_text, .picker_wrapper .date_picker_wrapper input:focus-within + .label_text {
   color: #1E86CB;
+  top: calc(50% - 18px);
+  font-size: 14px;
+}
+.picker_wrapper .date_picker_wrapper input:focus + .date_format_span, .picker_wrapper .date_picker_wrapper input:focus-visible + .date_format_span, .picker_wrapper .date_picker_wrapper input:focus-within + .date_format_span {
+  opacity: 1;
+}
+.picker_wrapper .date_picker_wrapper input:focus + .input_icon svg, .picker_wrapper .date_picker_wrapper input:focus-visible + .input_icon svg, .picker_wrapper .date_picker_wrapper input:focus-within + .input_icon svg {
+  fill: #1E86CB;
+}
+.picker_wrapper .date_picker_wrapper input:valid + .date_format_span {
+  opacity: 0;
+}
+.picker_wrapper .date_picker_wrapper .date_format_span {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  padding-left: 15px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  font-weight: bold;
+  opacity: 0;
 }
 .picker_wrapper .date_picker_wrapper .label_text {
   position: absolute;
@@ -40,6 +65,17 @@ body {
   transform: translateY(-50%);
   font-size: 16px;
   pointer-events: none;
+}
+.picker_wrapper .date_picker_wrapper .input_icon {
+  height: 30px;
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.picker_wrapper .date_picker_wrapper .input_icon svg {
+  height: inherit;
 }
 
 #ui-datepicker-div {

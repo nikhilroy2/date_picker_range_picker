@@ -13,11 +13,17 @@
 <body>
     <div class="picker_wrapper">
         <div class="date_picker_wrapper">
-            <input type="text" id="datepicker">
+            <input value="" type="text"  id="datepicker">
             <label for="" class="label_text">Start date title</label>
-            <span class="input_icon">
-                <img
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAABmJLR0QA/wD/AP+gvaeTAAACqUlEQVR4nO3bsWtTURTH8W+lBQULTTdxEV3MYAt1yBTokO5dujn7Nzh2ratTnTq4uXR0CFhwEIcUxCFd7FRxM4UKBgzUIQm972hefM195ybp7wOBdzjtvbenr6f3Je+BiIiIiIiIiIiIiIiIiIiUbiHx/PeBe0H8FehEGrsCPAri78C3SGPPnD3gMnjtRBx7x4y9F3HswhZLHn8VeJqTf2DiNeA80txr/5hrK+frW8CPSHO72yJ7Vk3zK++XMLFbZQ4uV1RoJ2X3aKsNfAjiGrAexE3gNNJcD4FGEH8GPgVxHahGmis526P3TT7lrmMfxx7tfUZb7+n/kEMnEcc+IVvco4hjF5a60O8GrzJ8AV6UNHZh3oWukfjCIVDznMy70Otk//ndGNreOVGhnXi3jibw2nnOUZ6T3WeXyrvQp8Bb5zlHcSsyqHW4UaGdpL5gGecN2fcjNoGLwfEy2au9NvAsiBtk9+wHwKsS1vhfpr3QVWAjiBfN8QajVUy+GXFdhal1OFGhnUx769gku8Zzc7waxD3zvYcm3427tGKmvdAXOblL8m9N+D0m70qtw0nqM/oOcDuIf9I/E4eW+bt1DD8oWABWglyP7F/AEnA3iLvArwnXe22pz+hd+vdSDF/bJn9k8mFhV0zOfoKybfK7kddeSOpC3xgqtJPUPfoMOA5iu0tom7hnjo9zvrZj8mfXWeCsGHe7QUqutxuodThRoZ2k7tFPgMdB/JFsL23Qfxdu6JCrffYS2e1gh8Tv0KU06S1hLZMPi14xuVbBtalHzyMV2knqHm0vm+1Njgdk+27XHL8M4rneJ4+jffSAWocTFdqJd4+uMz3to+45mXehq8zRcyNFqHU4UaGdlP3Q/bhHlKfJTD+iLCIiIiIiIiIiIiIiIiIiInPnD3TvwC1IJwX/AAAAAElFTkSuQmCC">
+            <span class="date_format_span">
+                MM/DD/YYYY
+            </span>
+            <span class="input_icon" data-datepicker-open>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                    <path
+                        d="M152 64H296V24C296 10.75 306.7 0 320 0C333.3 0 344 10.75 344 24V64H384C419.3 64 448 92.65 448 128V448C448 483.3 419.3 512 384 512H64C28.65 512 0 483.3 0 448V128C0 92.65 28.65 64 64 64H104V24C104 10.75 114.7 0 128 0C141.3 0 152 10.75 152 24V64zM48 248H128V192H48V248zM48 296V360H128V296H48zM176 296V360H272V296H176zM320 296V360H400V296H320zM400 192H320V248H400V192zM400 408H320V464H384C392.8 464 400 456.8 400 448V408zM272 408H176V464H272V408zM128 408H48V448C48 456.8 55.16 464 64 464H128V408zM272 192H176V248H272V192z" />
+                </svg>
             </span>
         </div>
     </div>
@@ -26,6 +32,10 @@
     <script>
         $(function () {
             $("#datepicker").datepicker();
+            $('[data-datepicker-open]').on('click', () => {
+                $("#datepicker").datepicker('show');
+
+            })
         });
     </script>
 </body>

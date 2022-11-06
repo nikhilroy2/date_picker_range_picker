@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="./css/date_picker.css">
+</head>
+
+<body>
+    <div class="picker_wrapper">
+        <div class="date_picker_wrapper">
+            <input type="text" id="datepicker">
+            <label for="" class="label_text">Start date title</label>
+            <span class="input_icon">
+                <img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAABmJLR0QA/wD/AP+gvaeTAAACqUlEQVR4nO3bsWtTURTH8W+lBQULTTdxEV3MYAt1yBTokO5dujn7Nzh2ratTnTq4uXR0CFhwEIcUxCFd7FRxM4UKBgzUIQm972hefM195ybp7wOBdzjtvbenr6f3Je+BiIiIiIiIiIiIiIiIiIiUbiHx/PeBe0H8FehEGrsCPAri78C3SGPPnD3gMnjtRBx7x4y9F3HswhZLHn8VeJqTf2DiNeA80txr/5hrK+frW8CPSHO72yJ7Vk3zK++XMLFbZQ4uV1RoJ2X3aKsNfAjiGrAexE3gNNJcD4FGEH8GPgVxHahGmis526P3TT7lrmMfxx7tfUZb7+n/kEMnEcc+IVvco4hjF5a60O8GrzJ8AV6UNHZh3oWukfjCIVDznMy70Otk//ndGNreOVGhnXi3jibw2nnOUZ6T3WeXyrvQp8Bb5zlHcSsyqHW4UaGdpL5gGecN2fcjNoGLwfEy2au9NvAsiBtk9+wHwKsS1vhfpr3QVWAjiBfN8QajVUy+GXFdhal1OFGhnUx769gku8Zzc7waxD3zvYcm3427tGKmvdAXOblL8m9N+D0m70qtw0nqM/oOcDuIf9I/E4eW+bt1DD8oWABWglyP7F/AEnA3iLvArwnXe22pz+hd+vdSDF/bJn9k8mFhV0zOfoKybfK7kddeSOpC3xgqtJPUPfoMOA5iu0tom7hnjo9zvrZj8mfXWeCsGHe7QUqutxuodThRoZ2k7tFPgMdB/JFsL23Qfxdu6JCrffYS2e1gh8Tv0KU06S1hLZMPi14xuVbBtalHzyMV2knqHm0vm+1Njgdk+27XHL8M4rneJ4+jffSAWocTFdqJd4+uMz3to+45mXehq8zRcyNFqHU4UaGdlP3Q/bhHlKfJTD+iLCIiIiIiIiIiIiIiIiIiInPnD3TvwC1IJwX/AAAAAElFTkSuQmCC">
+            </span>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#datepicker").datepicker();
+        });
+    </script>
+</body>
+
+</html>

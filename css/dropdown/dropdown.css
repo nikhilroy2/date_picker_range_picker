@@ -32,6 +32,9 @@ body {
   max-width: 992px;
   margin: 3rem auto;
 }
+.dropdown_wrapper .custom_nl_dropdown * {
+  font-family: "Fieldwork";
+}
 .dropdown_wrapper .custom_nl_dropdown label[for*=form-options] {
   font-size: 20px;
   display: block;
@@ -41,35 +44,59 @@ body {
   font-weight: bold;
 }
 .dropdown_wrapper .custom_nl_dropdown .ui-selectmenu-button.ui-button {
-  width: 500px;
+  width: 446px;
+  height: 64px;
   background: transparent;
-  border: 2px solid rgba(172, 175, 175, 0.6);
-  padding: 18px 20px;
-  border-radius: 12px;
+  border: 1px solid #B0B3B3;
+  padding: 16px 18px;
+  border-radius: 16px;
   color: #000000;
+  font-family: "Fieldwork";
+  font-style: normal;
+  font-weight: 300;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dropdown_wrapper .custom_nl_dropdown .ui-selectmenu-button.ui-button .ui-selectmenu-text {
+  order: 1;
+}
+.dropdown_wrapper .custom_nl_dropdown .ui-selectmenu-button.ui-button .ui-selectmenu-icon {
+  order: 2;
 }
 .dropdown_wrapper .custom_nl_dropdown .ui-selectmenu-button.ui-button.ui-selectmenu-button-open {
-  border-color: #1E86CB;
+  border: 2px solid #0071BC;
   color: #1E86CB;
-  border-radius: 12px 12px 0px 0px;
+  border-radius: 16px 16px 0px 0px;
 }
 .dropdown_wrapper .custom_nl_dropdown .ui-selectmenu-button.ui-button .ui-icon {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%231E86CB' viewBox='0 0 320 512'%3E%3C!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --%3E%3Cpath d='M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.0079 8L0.147903 0.865962C0.101039 0.819584 0.0638365 0.764407 0.0384521 0.703613C0.0130678 0.64282 0 0.577613 0 0.511754C0 0.445896 0.0130678 0.380689 0.0384521 0.319895C0.0638365 0.259101 0.101039 0.203924 0.147903 0.157547C0.194385 0.110787 0.249694 0.0736731 0.310623 0.0483454C0.371553 0.0230177 0.436893 0.0099779 0.502899 0.0099779C0.568905 0.0099779 0.634261 0.0230177 0.69519 0.0483454C0.75612 0.0736731 0.811429 0.110787 0.85791 0.157547L6.99791 6.53328L13.1379 0.147569C13.1844 0.10081 13.2397 0.0636952 13.3006 0.0383675C13.3615 0.0130398 13.4269 0 13.4929 0C13.5589 0 13.6243 0.0130398 13.6852 0.0383675C13.7461 0.0636952 13.8014 0.10081 13.8479 0.147569C13.8948 0.193947 13.932 0.249124 13.9574 0.309918C13.9827 0.370711 13.9958 0.435918 13.9958 0.501777C13.9958 0.567635 13.9827 0.632842 13.9574 0.693636C13.932 0.754429 13.8948 0.809606 13.8479 0.855984L7.0079 8Z' fill='%230071BC'/%3E%3C/svg%3E");
   width: 16px;
   height: 16px;
   display: block;
   background-repeat: no-repeat;
   background-position: center;
-  transform: rotate(-90deg);
+  transform: rotate(0deg);
   transition: 0.1s;
 }
 .dropdown_wrapper .custom_nl_dropdown .ui-selectmenu-button-open .ui-icon {
-  transform: rotate(90deg) !important;
+  transform: rotate(180deg) !important;
+}
+.dropdown_wrapper #dropdown_select_icon * {
+  font-family: "Fieldwork", sans-serif;
 }
 .dropdown_wrapper #dropdown_select_icon .ui-button {
-  padding-left: 50px;
+  padding-left: 56px;
   position: relative;
-  display: block;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dropdown_wrapper #dropdown_select_icon .ui-button .ui-selectmenu-text {
+  order: 1;
+}
+.dropdown_wrapper #dropdown_select_icon .ui-button .ui-selectmenu-icon {
+  order: 2;
 }
 .dropdown_wrapper #dropdown_select_icon .ui-button::before {
   content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' fill='%231E86CB' height='25' class='bi bi-geo-alt' viewBox='0 0 16 16'%3E%3Cpath d='M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z'/%3E%3Cpath d='M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z'/%3E%3C/svg%3E");
@@ -90,7 +117,7 @@ body {
 .dropdown_wrapper #dropdown_select_label .custom_dropdown_label {
   position: absolute;
   left: 21px;
-  bottom: 20px;
+  bottom: 25px;
   transition: 0.1s;
 }
 .dropdown_wrapper #dropdown_select_label .ui-button .ui-selectmenu-text {
@@ -100,8 +127,8 @@ body {
   color: #000000;
 }
 .dropdown_wrapper #dropdown_select_label .ui-button.ui-selectmenu-button-open ~ .custom_dropdown_label {
-  bottom: 45px;
-  font-size: 12px;
+  bottom: 42px;
+  font-size: 14px;
   opacity: 1;
   color: #1E86CB;
 }
@@ -116,10 +143,10 @@ body {
   opacity: 1;
 }
 .dropdown_wrapper .dropdown_select_label_with_icon .custom_dropdown_label {
-  left: 50px !important;
+  left: 56px !important;
 }
 .dropdown_wrapper .dropdown_select_label_with_icon .ui-button {
-  padding-left: 50px !important;
+  padding-left: 56px !important;
   position: relative;
   display: block;
 }
@@ -130,7 +157,7 @@ body {
   width: 25px;
   display: block;
   top: 50%;
-  left: 16px;
+  left: 21px;
   transform: translateY(-50%);
   display: flex;
   justify-content: center;
@@ -138,19 +165,19 @@ body {
 }
 
 .custom_select_menu .ui-widget.ui-widget-content {
-  border-left: 2px solid #1E86CB !important;
-  border-right: 2px solid #1E86CB !important;
-  border-bottom: 2px solid #1E86CB !important;
+  border-left: 2px solid #0071BC !important;
+  border-right: 2px solid #0071BC !important;
+  border-bottom: 2px solid #0071BC !important;
   border-top-color: transparent;
-  border-radius: 0px 0px 12px 12px;
+  border-radius: 0px 0px 16px 16px;
 }
 .custom_select_menu .ui-widget.ui-widget-content .ui-menu-item-wrapper {
-  padding: 18px 20px;
+  padding: 16px 18px;
   border: none !important;
   color: #000000;
 }
 .custom_select_menu .ui-widget.ui-widget-content .ui-menu-item-wrapper.ui-state-active {
   border: none !important;
-  background: #E5F5FA;
+  background: #E6F4F9;
   color: #000000;
 }/*# sourceMappingURL=dropdown.css.map */

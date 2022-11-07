@@ -12,12 +12,15 @@ body {
 
 
 // ............Date Picker Code .......
-$date_picker_size: 500px;
+$input_width: 500px;
 $picker_primary_color: #1E86CB;
 $input_border_color: rgba(172, 175, 175, 0.6);
 $input_padding: 18px 20px;
 $input_font_size: 16px;
 $black_color: #000000;
+$input_border: 2px solid $input_border_color;
+$input_border_radius: 12px;
+$dropdown_item_bg: #E5F5FA;
 
 .picker_wrapper {
     max-width: 992px;
@@ -27,17 +30,18 @@ $black_color: #000000;
         text-align: center;
         position: relative;
         width: 100%;
-        max-width: $date_picker_size;
+        max-width: $input_width;
 
         input {
             padding: $input_padding;
             padding-bottom: 12px;
-            border: 2px solid $input_border_color;
+            border: $input_border;
             font-size: $input_font_size;
             width: 100%;
-            border-radius: 12px;
+            border-radius: $input_border_radius;
             user-select: none;
             font-weight: bold;
+
             &::placeholder {
                 font-weight: bold;
                 color: $black_color;
@@ -112,11 +116,10 @@ $black_color: #000000;
 }
 
 // date picker jquery custom style 
-
 #ui-datepicker-div.datepicker_custom_nl_fr {
     background: white;
     border: none;
-    width: $date_picker_size;
+    width: $input_width;
     box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.1);
     padding: 10px;
 
@@ -169,9 +172,10 @@ $black_color: #000000;
         }
     }
 
-    .ui-datepicker-title{
+    .ui-datepicker-title {
         position: relative;
-        &::after{
+
+        &::after {
             content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%231E86CB' viewBox='0 0 320 512'%3E%3C!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --%3E%3Cpath d='M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z'/%3E%3C/svg%3E");
             width: 13px;
             height: 13px;
@@ -184,12 +188,14 @@ $black_color: #000000;
             pointer-events: none;
         }
     }
+
     select.ui-datepicker-year {
         width: 62px;
         font-weight: bold;
         appearance: none;
         border: none;
         position: relative;
+
         &:focus-visible {
             outline: none;
         }
@@ -234,3 +240,90 @@ $black_color: #000000;
         }
     }
 }
+
+// date picker jquery custom style End
+
+
+// .........Dropdown Style ...........
+.dropdown_wrapper {
+    max-width: 992px;
+    margin: 3rem auto;
+    // custom dropdown style
+
+    .custom_nl_dropdown {
+        label[for*='form-options'] {
+            font-size: 20px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        select.dropdown_action_ready {
+
+            // if it is ready it should bold color
+            ~.ui-button {
+                font-weight: bold;
+            }
+        }
+
+        .ui-selectmenu-button.ui-button {
+            width: $input_width;
+            background: transparent;
+            border: $input_border;
+            padding: $input_padding;
+            border-radius: $input_border_radius;
+            color: $black_color;
+
+            &.ui-selectmenu-button-open {
+                border-color: $picker_primary_color;
+                border-radius: $input_border_radius $input_border_radius 0px 0px;
+            }
+
+            .ui-icon {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%231E86CB' viewBox='0 0 320 512'%3E%3C!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --%3E%3Cpath d='M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z'/%3E%3C/svg%3E");
+                width: 16px;
+                height: 16px;
+                display: block;
+                background-repeat: no-repeat;
+                background-position: center;
+                transform: rotate(-90deg);
+                transition: .1s;
+            }
+        }
+
+        .ui-selectmenu-button-open {
+            .ui-icon {
+                transform: rotate(90deg) !important;
+            }
+        }
+    }
+}
+
+//  ui of dropdown
+.custom_select_menu {
+    // default custom dropdown style
+    .ui-widget.ui-widget-content {
+        border: 2px solid $picker_primary_color !important;
+        border-top: none;
+        border-radius: 0px 0px $input_border_radius $input_border_radius;
+
+        .ui-menu-item-wrapper {
+            padding: $input_padding;
+            border: none !important;
+            color: $black_color;
+            &.ui-state-active {
+                border: none !important;
+                background: $dropdown_item_bg;
+                color: $black_color;
+            }
+        }
+    }
+
+    // if icon need in dropdown use below code
+
+    #dropdown_select_icon{
+        
+    }
+
+}
+
+// .........Dropdown Style ...........End

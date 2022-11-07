@@ -16,33 +16,56 @@ body {
   text-align: center;
   position: relative;
   width: 100%;
-  max-width: 1000px;
+  max-width: 500px;
 }
 .picker_wrapper .date_picker_wrapper input {
-  padding: 18px 18px;
-  border: 2px solid #ACAFAF;
+  padding: 18px 20px;
+  padding-bottom: 12px;
+  border: 2px solid rgba(172, 175, 175, 0.6);
   font-size: 16px;
   width: 100%;
-  border-radius: 8px;
+  border-radius: 12px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  font-weight: bold;
 }
-.picker_wrapper .date_picker_wrapper input:focus, .picker_wrapper .date_picker_wrapper input:focus-visible, .picker_wrapper .date_picker_wrapper input:focus-within {
+.picker_wrapper .date_picker_wrapper input::-moz-placeholder {
+  font-weight: bold;
+  color: #000000;
+  opacity: 0;
+}
+.picker_wrapper .date_picker_wrapper input:-ms-input-placeholder {
+  font-weight: bold;
+  color: #000000;
+  opacity: 0;
+}
+.picker_wrapper .date_picker_wrapper input::placeholder {
+  font-weight: bold;
+  color: #000000;
+  opacity: 0;
+}
+.picker_wrapper .date_picker_wrapper input:focus::-moz-placeholder {
+  opacity: 1;
+}
+.picker_wrapper .date_picker_wrapper input:focus:-ms-input-placeholder {
+  opacity: 1;
+}
+.picker_wrapper .date_picker_wrapper input:focus::placeholder {
+  opacity: 1;
+}
+.picker_wrapper .date_picker_wrapper input:focus, .picker_wrapper .date_picker_wrapper input:valid, .picker_wrapper .date_picker_wrapper input:focus-visible, .picker_wrapper .date_picker_wrapper input:focus-within {
   border-color: #1E86CB !important;
   outline: none;
 }
-.picker_wrapper .date_picker_wrapper input:focus + .label_text, .picker_wrapper .date_picker_wrapper input:focus-visible + .label_text, .picker_wrapper .date_picker_wrapper input:focus-within + .label_text {
+.picker_wrapper .date_picker_wrapper input:focus ~ .label_text, .picker_wrapper .date_picker_wrapper input:valid ~ .label_text, .picker_wrapper .date_picker_wrapper input:focus-visible ~ .label_text, .picker_wrapper .date_picker_wrapper input:focus-within ~ .label_text {
   color: #1E86CB;
-  top: calc(50% - 18px);
-  font-size: 14px;
+  top: calc(50% - 14px);
+  font-size: 13px;
 }
-.picker_wrapper .date_picker_wrapper input:focus + .date_format_span, .picker_wrapper .date_picker_wrapper input:focus-visible + .date_format_span, .picker_wrapper .date_picker_wrapper input:focus-within + .date_format_span {
+.picker_wrapper .date_picker_wrapper input:focus ~ .date_format_span, .picker_wrapper .date_picker_wrapper input:valid ~ .date_format_span, .picker_wrapper .date_picker_wrapper input:focus-visible ~ .date_format_span, .picker_wrapper .date_picker_wrapper input:focus-within ~ .date_format_span {
   opacity: 1;
-}
-.picker_wrapper .date_picker_wrapper input:focus + .input_icon svg, .picker_wrapper .date_picker_wrapper input:focus-visible + .input_icon svg, .picker_wrapper .date_picker_wrapper input:focus-within + .input_icon svg {
-  fill: #1E86CB;
 }
 .picker_wrapper .date_picker_wrapper input:valid + .date_format_span {
   opacity: 0;
@@ -65,38 +88,37 @@ body {
   transform: translateY(-50%);
   font-size: 16px;
   pointer-events: none;
+  font-weight: bold;
+  transition: 0.1s;
 }
 .picker_wrapper .date_picker_wrapper .input_icon {
-  height: 30px;
+  height: 35px;
   position: absolute;
-  right: 25px;
-  top: 50%;
+  right: 20px;
+  top: calc(50% + 0px);
   transform: translateY(-50%);
   cursor: pointer;
 }
-.picker_wrapper .date_picker_wrapper .input_icon svg {
-  height: inherit;
-}
 
-#ui-datepicker-div {
+#ui-datepicker-div.datepicker_custom_nl_fr {
   background: white;
   border: none;
-  width: 1000px;
-  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.1);
   padding: 10px;
 }
-#ui-datepicker-div .ui-widget-header {
+#ui-datepicker-div.datepicker_custom_nl_fr .ui-widget-header {
   background: transparent;
   border: none;
 }
-#ui-datepicker-div .ui-datepicker-calendar thead th {
+#ui-datepicker-div.datepicker_custom_nl_fr .ui-datepicker-calendar thead th {
   opacity: 0.7;
 }
-#ui-datepicker-div .ui-state-default {
+#ui-datepicker-div.datepicker_custom_nl_fr .ui-state-default {
   background: transparent;
   text-align: center;
   border: none;
-  color: #000;
+  color: #000000;
   width: 35px;
   height: 35px;
   border-radius: 50%;
@@ -106,34 +128,76 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-#ui-datepicker-div .ui-state-default.ui-state-highlight, #ui-datepicker-div .ui-state-default.ui-state-active {
+#ui-datepicker-div.datepicker_custom_nl_fr .ui-state-default.ui-state-highlight, #ui-datepicker-div.datepicker_custom_nl_fr .ui-state-default.ui-state-active {
   background: #003B5C;
   color: #fff;
 }
-#ui-datepicker-div .ui-datepicker-prev,
-#ui-datepicker-div .ui-datepicker-next {
+#ui-datepicker-div.datepicker_custom_nl_fr .ui-datepicker-prev,
+#ui-datepicker-div.datepicker_custom_nl_fr .ui-datepicker-next {
   background: transparent !important;
   border: none !important;
   margin: 0;
   padding: 0;
   cursor: pointer;
 }
-#ui-datepicker-div .ui-datepicker-prev span,
-#ui-datepicker-div .ui-datepicker-next span {
+#ui-datepicker-div.datepicker_custom_nl_fr .ui-datepicker-prev span,
+#ui-datepicker-div.datepicker_custom_nl_fr .ui-datepicker-next span {
   background-repeat: no-repeat;
   background-position: initial;
 }
-#ui-datepicker-div .ui-datepicker-prev {
+#ui-datepicker-div.datepicker_custom_nl_fr .ui-datepicker-title {
+  position: relative;
+}
+#ui-datepicker-div.datepicker_custom_nl_fr .ui-datepicker-title::after {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%231E86CB' viewBox='0 0 320 512'%3E%3C!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --%3E%3Cpath d='M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z'/%3E%3C/svg%3E");
+  width: 13px;
+  height: 13px;
+  margin-left: -20px;
+  z-index: 2;
+  position: absolute;
+  transform: rotate(-90deg);
+  margin-top: 6px;
+  fill: #1E86CB;
+  pointer-events: none;
+}
+#ui-datepicker-div.datepicker_custom_nl_fr select.ui-datepicker-year {
+  width: 62px;
+  font-weight: bold;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  position: relative;
+}
+#ui-datepicker-div.datepicker_custom_nl_fr select.ui-datepicker-year:focus-visible {
+  outline: none;
+}
+#ui-datepicker-div.datepicker_custom_nl_fr select.ui-datepicker-year::-webkit-scrollbar {
+  display: none;
+}
+#ui-datepicker-div.datepicker_custom_nl_fr select.ui-datepicker-year::-moz-scrollbar {
+  display: none;
+}
+#ui-datepicker-div.datepicker_custom_nl_fr select.ui-datepicker-year::-o-scrollbar {
+  display: none;
+}
+#ui-datepicker-div.datepicker_custom_nl_fr select.ui-datepicker-year::-google-ms-scrollbar {
+  display: none;
+}
+#ui-datepicker-div.datepicker_custom_nl_fr select.ui-datepicker-year::-khtml-scrollbar {
+  display: none;
+}
+#ui-datepicker-div.datepicker_custom_nl_fr .ui-datepicker-prev {
   left: 2px !important;
   top: 2px !important;
 }
-#ui-datepicker-div .ui-datepicker-prev span {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3C!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --%3E%3Cpath d='M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z'/%3E%3C/svg%3E");
+#ui-datepicker-div.datepicker_custom_nl_fr .ui-datepicker-prev span {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%231E86CB' viewBox='0 0 320 512'%3E%3C!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --%3E%3Cpath d='M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z'/%3E%3C/svg%3E");
 }
-#ui-datepicker-div .ui-datepicker-next {
+#ui-datepicker-div.datepicker_custom_nl_fr .ui-datepicker-next {
   right: 2px !important;
   top: 2px !important;
 }
-#ui-datepicker-div .ui-datepicker-next span {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3C!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --%3E%3Cpath d='M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z'/%3E%3C/svg%3E");
+#ui-datepicker-div.datepicker_custom_nl_fr .ui-datepicker-next span {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%231E86CB' viewBox='0 0 320 512'%3E%3C!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --%3E%3Cpath d='M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z'/%3E%3C/svg%3E");
 }/*# sourceMappingURL=date_picker.css.map */

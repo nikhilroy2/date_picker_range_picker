@@ -8,9 +8,16 @@ body {
     padding: 0;
 }
 
+// ...........Date Picker default css .......
+
+
 // ............Date Picker Code .......
-$date_picker_size: 1000px;
+$date_picker_size: 500px;
 $picker_primary_color: #1E86CB;
+$input_border_color: rgba(172, 175, 175, 0.6);
+$input_padding: 18px 20px;
+$input_font_size: 16px;
+$black_color: #000000;
 
 .picker_wrapper {
     max-width: 992px;
@@ -23,39 +30,48 @@ $picker_primary_color: #1E86CB;
         max-width: $date_picker_size;
 
         input {
-            padding: 18px 18px;
-            border: 2px solid #ACAFAF;
-            font-size: 16px;
+            padding: $input_padding;
+            padding-bottom: 12px;
+            border: 2px solid $input_border_color;
+            font-size: $input_font_size;
             width: 100%;
-            border-radius: 8px;
+            border-radius: 12px;
             user-select: none;
+            font-weight: bold;
+            &::placeholder {
+                font-weight: bold;
+                color: $black_color;
+                opacity: 0;
+            }
+
+            &:focus {
+                &::placeholder {
+                    opacity: 1;
+                }
+            }
 
             &:focus,
+            &:valid,
             &:focus-visible,
             &:focus-within {
                 border-color: $picker_primary_color !important;
                 outline: none;
 
-                + .label_text {
+                ~.label_text {
                     color: $picker_primary_color;
-                    top: calc(50% - 18px);
-                    font-size: 14px;
+                    top: calc(50% - 14px);
+                    font-size: 13px;
                 }
 
-                + .date_format_span {
+                ~.date_format_span {
                     opacity: 1;
                 }
 
-                + .input_icon {
-                    svg {
-                        fill: $picker_primary_color;
-                    }
-                }
 
             }
 
             &:valid {
-                + .date_format_span {
+                +.date_format_span {
                     opacity: 0;
                 }
             }
@@ -80,30 +96,28 @@ $picker_primary_color: #1E86CB;
             transform: translateY(-50%);
             font-size: 16px;
             pointer-events: none;
+            font-weight: bold;
+            transition: .1s;
         }
 
         .input_icon {
-            height: 30px;
+            height: 35px;
             position: absolute;
-            right: 25px;
-            top: 50%;
+            right: 20px;
+            top: calc(50% + 0px);
             transform: translateY(-50%);
             cursor: pointer;
-
-            svg {
-                height: inherit;
-            }
         }
     }
 }
 
 // date picker jquery custom style 
 
-#ui-datepicker-div {
+#ui-datepicker-div.datepicker_custom_nl_fr {
     background: white;
     border: none;
     width: $date_picker_size;
-    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.1);
     padding: 10px;
 
     .ui-widget-header {
@@ -123,7 +137,7 @@ $picker_primary_color: #1E86CB;
         background: transparent;
         text-align: center;
         border: none;
-        color: #000;
+        color: $black_color;
         $s: 35px;
         width: $s;
         height: $s;
@@ -155,12 +169,58 @@ $picker_primary_color: #1E86CB;
         }
     }
 
+    .ui-datepicker-title{
+        position: relative;
+        &::after{
+            content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%231E86CB' viewBox='0 0 320 512'%3E%3C!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --%3E%3Cpath d='M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z'/%3E%3C/svg%3E");
+            width: 13px;
+            height: 13px;
+            margin-left: -20px;
+            z-index: 2;
+            position: absolute;
+            transform: rotate(-90deg);
+            margin-top: 6px;
+            fill: $picker_primary_color;
+            pointer-events: none;
+        }
+    }
+    select.ui-datepicker-year {
+        width: 62px;
+        font-weight: bold;
+        appearance: none;
+        border: none;
+        position: relative;
+        &:focus-visible {
+            outline: none;
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        &::-moz-scrollbar {
+            display: none;
+        }
+
+        &::-o-scrollbar {
+            display: none;
+        }
+
+        &::-google-ms-scrollbar {
+            display: none;
+        }
+
+        &::-khtml-scrollbar {
+            display: none;
+        }
+    }
+
     .ui-datepicker-prev {
         left: 2px !important;
         top: 2px !important;
 
         span {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3C!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --%3E%3Cpath d='M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%231E86CB' viewBox='0 0 320 512'%3E%3C!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --%3E%3Cpath d='M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z'/%3E%3C/svg%3E");
 
         }
     }
@@ -170,7 +230,7 @@ $picker_primary_color: #1E86CB;
         top: 2px !important;
 
         span {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3C!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --%3E%3Cpath d='M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%231E86CB' viewBox='0 0 320 512'%3E%3C!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --%3E%3Cpath d='M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z'/%3E%3C/svg%3E");
         }
     }
 }

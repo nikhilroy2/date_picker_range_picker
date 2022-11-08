@@ -36,15 +36,25 @@ body {
   text-align: center;
   position: relative;
   width: 100%;
-  max-width: 500px;
+  max-width: 450px;
+  height: 64px;
+  font-family: "Fieldwork", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
+@media (max-width: 482px) {
+  .picker_wrapper .date_picker_wrapper {
+    width: 288px;
+  }
 }
 .picker_wrapper .date_picker_wrapper input {
   padding: 18px 20px;
   padding-bottom: 12px;
-  border: 2px solid rgba(172, 175, 175, 0.6);
-  font-size: 16px;
+  border: 2px solid #B0B3B3;
+  font-size: 18px;
   width: 100%;
-  border-radius: 12px;
+  height: 100%;
+  border-radius: 16px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -76,13 +86,13 @@ body {
   opacity: 1;
 }
 .picker_wrapper .date_picker_wrapper input:focus, .picker_wrapper .date_picker_wrapper input:valid, .picker_wrapper .date_picker_wrapper input:focus-visible, .picker_wrapper .date_picker_wrapper input:focus-within {
-  border-color: #1E86CB !important;
+  border: 1px solid #0071BC;
   outline: none;
 }
 .picker_wrapper .date_picker_wrapper input:focus ~ .label_text, .picker_wrapper .date_picker_wrapper input:valid ~ .label_text, .picker_wrapper .date_picker_wrapper input:focus-visible ~ .label_text, .picker_wrapper .date_picker_wrapper input:focus-within ~ .label_text {
   color: #1E86CB;
-  top: calc(50% - 14px);
-  font-size: 13px;
+  top: 14px;
+  font-size: 14px;
 }
 .picker_wrapper .date_picker_wrapper input:focus ~ .date_format_span, .picker_wrapper .date_picker_wrapper input:valid ~ .date_format_span, .picker_wrapper .date_picker_wrapper input:focus-visible ~ .date_format_span, .picker_wrapper .date_picker_wrapper input:focus-within ~ .date_format_span {
   opacity: 1;
@@ -108,7 +118,7 @@ body {
   transform: translateY(-50%);
   font-size: 16px;
   pointer-events: none;
-  font-weight: bold;
+  font-weight: 300;
   transition: 0.1s;
 }
 .picker_wrapper .date_picker_wrapper .input_icon {
@@ -119,34 +129,51 @@ body {
   transform: translateY(-50%);
   cursor: pointer;
 }
+.picker_wrapper .date_picker_wrapper .input_icon svg {
+  height: 35px !important;
+}
 
 #ui-datepicker-div.datepicker_custom_nl_fr {
   background: white;
   border: none;
-  width: 500px;
-  box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.1);
+  width: 450px;
+  box-shadow: 0px 8px 32px -8px rgba(0, 0, 0, 0.16);
   padding: 10px;
+}
+@media (max-width: 482px) {
+  #ui-datepicker-div.datepicker_custom_nl_fr {
+    width: 288px;
+  }
 }
 #ui-datepicker-div.datepicker_custom_nl_fr .ui-widget-header {
   background: transparent;
   border: none;
 }
 #ui-datepicker-div.datepicker_custom_nl_fr .ui-datepicker-calendar thead th {
-  opacity: 0.7;
+  font-size: 14px;
+  color: #75787A;
+  font-weight: 300;
 }
 #ui-datepicker-div.datepicker_custom_nl_fr .ui-state-default {
   background: transparent;
   text-align: center;
   border: none;
   color: #000000;
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
+  font-size: 16px;
+}
+@media (max-width: 482px) {
+  #ui-datepicker-div.datepicker_custom_nl_fr .ui-state-default {
+    width: 32px;
+    height: 32px;
+  }
 }
 #ui-datepicker-div.datepicker_custom_nl_fr .ui-state-default.ui-state-highlight, #ui-datepicker-div.datepicker_custom_nl_fr .ui-state-default.ui-state-active {
   background: #003B5C;
@@ -169,16 +196,19 @@ body {
   position: relative;
 }
 #ui-datepicker-div.datepicker_custom_nl_fr .ui-datepicker-title::after {
-  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%231E86CB' viewBox='0 0 320 512'%3E%3C!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --%3E%3Cpath d='M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z'/%3E%3C/svg%3E");
+  content: url("data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.0079 12.1816L1.1479 5.0476C1.10104 5.00122 1.06384 4.94605 1.03845 4.88525C1.01307 4.82446 1 4.75925 1 4.69339C1 4.62754 1.01307 4.56233 1.03845 4.50154C1.06384 4.44074 1.10104 4.38556 1.1479 4.33919C1.19438 4.29243 1.24969 4.25531 1.31062 4.22999C1.37155 4.20466 1.43689 4.19162 1.5029 4.19162C1.56891 4.19162 1.63426 4.20466 1.69519 4.22999C1.75612 4.25531 1.81143 4.29243 1.85791 4.33919L7.99791 10.7149L14.1379 4.32921C14.1844 4.28245 14.2397 4.24534 14.3006 4.22001C14.3615 4.19468 14.4269 4.18164 14.4929 4.18164C14.5589 4.18164 14.6243 4.19468 14.6852 4.22001C14.7461 4.24534 14.8014 4.28245 14.8479 4.32921C14.8948 4.37559 14.932 4.43076 14.9574 4.49156C14.9827 4.55235 14.9958 4.61756 14.9958 4.68342C14.9958 4.74928 14.9827 4.81448 14.9574 4.87528C14.932 4.93607 14.8948 4.99125 14.8479 5.03762L8.0079 12.1816Z' fill='%230071BC'/%3E%3C/svg%3E");
   width: 13px;
   height: 13px;
   margin-left: -20px;
   z-index: 2;
   position: absolute;
-  transform: rotate(-90deg);
-  margin-top: 6px;
+  margin-top: 0px;
   fill: #1E86CB;
   pointer-events: none;
+}
+#ui-datepicker-div.datepicker_custom_nl_fr .ui-datepicker-month {
+  font-size: 18px;
+  font-weight: 500;
 }
 #ui-datepicker-div.datepicker_custom_nl_fr select.ui-datepicker-year {
   width: 62px;
@@ -188,6 +218,8 @@ body {
           appearance: none;
   border: none;
   position: relative;
+  font-weight: 500;
+  font-size: 18px;
 }
 #ui-datepicker-div.datepicker_custom_nl_fr select.ui-datepicker-year:focus-visible {
   outline: none;
@@ -212,12 +244,12 @@ body {
   top: 2px !important;
 }
 #ui-datepicker-div.datepicker_custom_nl_fr .ui-datepicker-prev span {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%231E86CB' viewBox='0 0 320 512'%3E%3C!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --%3E%3Cpath d='M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='8' height='15' viewBox='0 0 8 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.4926 14.455C7.36303 14.4519 7.23891 14.4022 7.14295 14.315L0 7.45501L7.14295 0.595009C7.238 0.50276 7.3652 0.451172 7.4976 0.451172C7.62999 0.451172 7.75719 0.50276 7.85225 0.595009C7.89906 0.641491 7.93622 0.696791 7.96158 0.757721C7.98694 0.818651 8 0.884003 8 0.950009C8 1.01602 7.98694 1.08137 7.96158 1.1423C7.93622 1.20323 7.89906 1.25853 7.85225 1.30501L1.44857 7.45501L7.84225 13.595C7.88907 13.6415 7.92623 13.6968 7.95159 13.7577C7.97695 13.8187 7.99001 13.884 7.99001 13.95C7.99001 14.016 7.97695 14.0814 7.95159 14.1423C7.92623 14.2032 7.88907 14.2585 7.84225 14.305C7.74942 14.3983 7.62413 14.4521 7.4926 14.455Z' fill='%230071BC'/%3E%3C/svg%3E");
 }
 #ui-datepicker-div.datepicker_custom_nl_fr .ui-datepicker-next {
   right: 2px !important;
   top: 2px !important;
 }
 #ui-datepicker-div.datepicker_custom_nl_fr .ui-datepicker-next span {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%231E86CB' viewBox='0 0 320 512'%3E%3C!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --%3E%3Cpath d='M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.5 15.4548C4.40092 15.4534 4.30449 15.4226 4.22294 15.3663C4.14138 15.31 4.07839 15.2308 4.04196 15.1387C4.00553 15.0465 3.9973 14.9456 4.01832 14.8488C4.03934 14.7519 4.08865 14.6635 4.16 14.5948L10.55 8.45477L4.15 2.31477C4.10314 2.26829 4.06594 2.21299 4.04056 2.15206C4.01517 2.09113 4.00211 2.02578 4.00211 1.95977C4.00211 1.89377 4.01517 1.82842 4.04056 1.76749C4.06594 1.70656 4.10314 1.65126 4.15 1.60477C4.24515 1.51253 4.37248 1.46094 4.505 1.46094C4.63753 1.46094 4.76485 1.51253 4.86 1.60477L12 8.45477L4.85 15.3148C4.75495 15.4036 4.63008 15.4535 4.5 15.4548V15.4548Z' fill='%230071BC'/%3E%3C/svg%3E");
 }/*# sourceMappingURL=date_picker.css.map */

@@ -9,7 +9,7 @@ body {
 
 $input_width: 446px;
 $input_height: 64px;
-$picker_primary_color: #1E86CB;
+$input_select_color: #0071BC;
 $input_border_color: #B0B3B3;
 $input_padding: 16px 18px;
 $input_font_size: 18px;
@@ -24,6 +24,7 @@ $dropdown_item_bg: #E6F4F9;
 .dropdown_wrapper {
     max-width: 992px;
     margin: 3rem auto;
+
     // custom dropdown style
     label[for*='form-options'] {
         font-size: 20px;
@@ -34,11 +35,25 @@ $dropdown_item_bg: #E6F4F9;
     .custom_nl_dropdown {
         width: $input_width;
 
+        * {
+            font-family: 'Fieldwork', sans-serif;
+        }
+
         .select_wrapper {
             width: $input_width;
             height: $input_height;
             border: $input_border;
             border-radius: $input_border_radius;
+            cursor: pointer;
+            position: relative;
+
+            .select_before_icon {
+                position: absolute;
+                top: 50%;
+                left: 16px;
+                transform: translateY(-50%);
+            }
+
             select {
                 width: 100%;
                 height: 100%;
@@ -50,14 +65,77 @@ $dropdown_item_bg: #E6F4F9;
                 font-size: $input_font_size;
                 padding-left: 16px;
             }
-            &.dropdown_select_action{
+
+            .select_after_icon {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 16px;
+
+                svg {
+                    transition: .1s;
+                }
+            }
+
+            &.dropdown_select_action {
                 border: $input_select_border;
                 border-radius: $input_border_radius $input_border_radius 0px 0px;
+
+                .select_after_icon {
+                    svg {
+                        transform: scaleY(-1);
+                    }
+                }
+            }
+
+        }
+
+        // if dropdown need icon use below code
+        &.dropdown_select_icon {
+            select {
+                padding-left: 64px;
+            }
+            .custom_dropdown_label{
+                left: 64px!important;
             }
         }
 
+        // if dropdown need label use below code
+        &.dropdown_select_label {
+            select {
+                opacity: 0;
+            }
+
+            .custom_dropdown_label {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 16px;
+                font-size: 18px;
+                transition: .1s;
+            }
+
+            .dropdown_select_action,
+            .dropdown_action_done {
+                
+                .custom_dropdown_label {
+                    top: 25%;
+                    font-size: 14px;
+                    color: $input_select_color;
+                }
+                select {
+                    opacity: 1;
+                    line-height: 28px;
+                    padding-top: 28px;
+                }
+            }
+        }
+
+
+
         .custom_nl_dropdown_group {
             position: relative;
+
             .dropdown_ul {
                 margin: 0;
                 padding: 0;
@@ -73,9 +151,16 @@ $dropdown_item_bg: #E6F4F9;
                 border-left: $input_select_border;
                 border-right: $input_select_border;
                 border-bottom: $input_select_border;
-                li{
+                border-top-width: 0px;
+                overflow: hidden;
+
+                li {
                     padding: $input_padding;
                     cursor: pointer;
+
+                    &.list_active_hover {
+                        background: $dropdown_item_bg;
+                    }
                 }
             }
         }

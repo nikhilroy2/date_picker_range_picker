@@ -31,6 +31,7 @@ body {
 .picker_wrapper {
   max-width: 992px;
   margin: 3rem auto;
+  padding: 16px;
 }
 .picker_wrapper .date_picker_wrapper {
   text-align: center;
@@ -131,6 +132,13 @@ body {
 }
 .picker_wrapper .date_picker_wrapper .input_icon svg {
   height: 35px !important;
+}
+.picker_wrapper .date_picker_range_wrapper {
+  display: flex;
+  align-items: center;
+}
+.picker_wrapper .date_picker_range_wrapper .date_picker_range:first-child {
+  margin-right: 16px;
 }
 
 #ui-datepicker-div.datepicker_custom_nl_fr {

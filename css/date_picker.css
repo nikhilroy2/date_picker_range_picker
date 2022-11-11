@@ -130,6 +130,11 @@ body {
   transform: translateY(-50%);
   cursor: pointer;
 }
+@media (max-width: 600px) {
+  .picker_wrapper .date_picker_wrapper .input_icon {
+    display: none;
+  }
+}
 .picker_wrapper .date_picker_wrapper .input_icon svg {
   height: 35px !important;
 }
@@ -137,20 +142,60 @@ body {
   display: flex;
   align-items: center;
 }
-.picker_wrapper .date_picker_range_wrapper .date_picker_range:first-child {
+@media (max-width: 600px) {
+  .picker_wrapper .date_picker_range_wrapper {
+    border: 2px solid #B0B3B3;
+    border-radius: 16px;
+  }
+  .picker_wrapper .date_picker_range_wrapper input {
+    border: none !important;
+  }
+}
+
+.date_picker_range_wrapper {
+  position: relative;
+}
+.date_picker_range_wrapper .input_icon_sm {
+  display: none;
+}
+@media (max-width: 600px) {
+  .date_picker_range_wrapper .input_icon_sm {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    left: calc(50% - 10px);
+    right: auto;
+    z-index: 2;
+    cursor: pointer;
+  }
+}
+.date_picker_range_wrapper .date_picker_range.date_picker_range_start {
   margin-right: 16px;
+}
+@media (max-width: 600px) {
+  .date_picker_range_wrapper .date_picker_range input::-moz-placeholder {
+    font-size: 16px !important;
+  }
+  .date_picker_range_wrapper .date_picker_range input:-ms-input-placeholder {
+    font-size: 16px !important;
+  }
+  .date_picker_range_wrapper .date_picker_range input,
+.date_picker_range_wrapper .date_picker_range input::placeholder {
+    font-size: 16px !important;
+  }
 }
 
 .datepicker_custom_nl_fr {
   background: white;
-  border: none;
+  border: none !important;
   width: 450px;
   box-shadow: 0px 8px 32px -8px rgba(0, 0, 0, 0.16);
   padding: 10px;
   width: 450px;
 }
 .datepicker_custom_nl_fr.picker_range {
-  width: 916px !important;
+  width: var(--range-width);
 }
 .datepicker_custom_nl_fr.picker_range .ui-datepicker {
   border: none !important;
@@ -212,8 +257,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: auto;
-  margin-right: auto;
   font-size: 16px;
 }
 @media (max-width: 482px) {

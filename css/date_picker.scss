@@ -49,6 +49,7 @@ $dropdown_item_bg: #E5F5FA;
 
 $font_size_sm: 14px;
 
+
 // sm size variables 
 // mixing
 @mixin date_round_size($size) {
@@ -157,34 +158,79 @@ $font_size_sm: 14px;
             transform: translateY(-50%);
             cursor: pointer;
 
+            @media (max-width: 600px) {
+                display: none;
+
+            }
+
+
             svg {
                 height: 35px !important;
             }
         }
+
     }
 
     .date_picker_range_wrapper {
         display: flex;
         align-items: center;
 
-        .date_picker_range:first-child {
-            margin-right: 16px;
+        @media (max-width: 600px) {
+            border: $input_border;
+            border-radius: $input_border_radius;
+
+            input {
+                border: none !important;
+                // border-radius: 0px!important;
+            }
+        }
+
+       
+    }
+}
+
+.date_picker_range_wrapper {
+    position: relative;
+    .input_icon_sm {
+        display: none;
+        @media (max-width: 600px) {
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: block;
+            left: calc(50% - 10px);
+            right: auto;
+            z-index: 2;
+            cursor: pointer;
         }
     }
+    .date_picker_range {
+        &.date_picker_range_start{
+            margin-right: 16px;
+        }
 
+        input,
+        input::placeholder {
+            @media (max-width: 600px) {
+                font-size: 16px !important;
+            }
+        }
+    }
 }
+
+
 
 // date picker jquery custom style 
 .datepicker_custom_nl_fr {
     background: white;
-    border: none;
+    border: none!important;
     width: $input_width;
     box-shadow: 0px 8px 32px -8px rgba(0, 0, 0, 0.16);
     padding: 10px;
     width: $input_width;
 
     &.picker_range {
-        width: $input_width * 2 + 16 !important;
+        width: var(--range-width);
 
         .ui-datepicker {
             border: none !important;
@@ -259,24 +305,17 @@ $font_size_sm: 14px;
         @media (max-width: 482px) {
             @include date_round_size(32px);
         }
-
         border-radius: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-left: auto;
-        margin-right: auto;
         font-size: 16px;
-
         &.ui-state-highlight,
         &.ui-state-active {
             background: #003B5C;
             color: #fff;
         }
     }
-
-
-
     .ui-datepicker-prev,
     .ui-datepicker-next {
         background: transparent !important;

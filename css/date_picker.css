@@ -246,6 +246,9 @@ body {
   color: #75787A;
   font-weight: 300;
 }
+.datepicker_custom_nl_fr .dp-highlight .ui-state-highlight {
+  color: black !important;
+}
 .datepicker_custom_nl_fr .ui-state-default {
   background: transparent;
   text-align: center;
@@ -267,6 +270,8 @@ body {
 }
 .datepicker_custom_nl_fr .ui-state-default.ui-state-highlight, .datepicker_custom_nl_fr .ui-state-default.ui-state-active {
   background: #003B5C;
+}
+.datepicker_custom_nl_fr .ui-state-default.ui-state-highlight {
   color: #fff;
 }
 .datepicker_custom_nl_fr .ui-datepicker-prev,
